@@ -1,0 +1,9 @@
+<nb-card status="info">
+    <nb-card-header>
+        {{permission.Name}}菜单
+    </nb-card-header>
+    <nb-card-body>
+        <ng2-smart-table [settings]="settings" [source]="source" (create)="updateMenus()" (delete)="deleteMenu($event)">
+        </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>

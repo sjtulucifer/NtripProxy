@@ -1,0 +1,5 @@
+2018-11-21 11:12:20.3534 | 调用接口api/SessionHistory/GetOnlineSessionFixedRateByUserID异常，异常信息为：未将对象引用设置到对象的实例。 
+2018-11-21 11:14:04.1964 | 调用接口api/SessionHistory/GetOnlineSessionFixedRateByUserID异常，异常信息为：未将对象引用设置到对象的实例。 
+2018-11-21 11:21:39.2142 | 调用接口api/SessionHistory/GetOnlineSessionByStatus异常，异常信息为：未将对象引用设置到对象的实例。 
+2018-11-21 15:23:55.4226 | 调用接口api/User/Login异常，异常信息为：未将对象引用设置到对象的实例。 
+2018-11-21 15:23:59.9874 | 调用接口api/User/Login异常，异常信息为：未将对象引用设置到对象的实例。 

@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>添加账号</nb-card-header>
+      <nb-card-body>
+        <form novalidate #accountForm="ngForm">
+          <div class="form-group row">
+            <label for="AccountSYSName" class="col-sm-3 col-form-label">账户名</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" placeholder="输入账户名" name="AccountName" [(ngModel)]="account.Name"
+                #AccountName="ngModel" required>
+              <div *ngIf="AccountName.errors?.required && AccountName.touched" class="error">
+                账户名必须填写
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="AccountPassword" class="col-sm-3 col-form-label">账户密码</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" placeholder="输入账户密码" name="AccountPassword" [(ngModel)]="account.Password"
+                #AccountPassword="ngModel" required>
+              <div *ngIf="AccountPassword.errors?.required && AccountPassword.touched" class="error">
+                账户密码必须填写
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="AccountRegister" class="col-sm-3 col-form-label">注册日期</label>
+            <div class="col-sm-9">
+              <input type="date" class="form-control" name="AccountRegister" [(ngModel)]="account.Register"
+                placeholder="" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="AccountExpire" class="col-sm-3 col-form-label">过期日期</label>
+            <div class="col-sm-9">
+              <input type="date" class="form-control" name="AccountExpire" [(ngModel)]="account.Expire"
+                placeholder="" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="AccountCompany" class="col-sm-3 col-form-label">公司</label>
+            <div class="col-sm-9">
+              <select class="form-control" [ngModel]="accountCompany.ID" name="AccountCompany" (ngModelChange)="accountCompanyChange($event)" required>
+                <option *ngFor="let company of companyList" [value]="company.ID">{{company.Name}}</option>
+              </select>
+            </div>
+        </div>
+        </form>
+      </nb-card-body>
+      <nb-card-footer>
+        <button type="button" class="btn btn-primary" (click)="onClose()">取消</button>
+        <button type="button" class="btn btn-primary" [disabled]="accountForm.invalid" (click)="onSubmit()">创建</button>
+      </nb-card-footer>
+    </nb-card>
+  </div>
+</div>

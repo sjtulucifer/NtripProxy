@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>添加系统账号</nb-card-header>
+      <nb-card-body>
+        <form novalidate #accountSYSForm="ngForm">
+          <div class="form-group row">
+            <label for="AccountSYSName" class="col-sm-3 col-form-label">系统账户名</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" placeholder="输入账户名" name="AccountSYSName" [(ngModel)]="accountSYS.Name"
+                #AccountSYSName="ngModel" required>
+              <div *ngIf="AccountSYSName.errors?.required && AccountSYSName.touched" class="error">
+                系统账户名必须填写
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="AccountSYSPassword" class="col-sm-3 col-form-label">账户密码</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" placeholder="输入账户密码" name="AccountSYSPassword" [(ngModel)]="accountSYS.Password"
+                #AccountSYSPassword="ngModel" required>
+              <div *ngIf="AccountSYSPassword.errors?.required && AccountSYSPassword.touched" class="error">
+                账户密码必须填写
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="AccountSYSRegister" class="col-sm-3 col-form-label">注册日期</label>
+            <div class="col-sm-9">
+              <input type="date" class="form-control" name="AccountSYSRegister" [(ngModel)]="accountSYS.Register"
+                placeholder="" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="AccountSYSExpire" class="col-sm-3 col-form-label">过期日期</label>
+            <div class="col-sm-9">
+              <input type="date" class="form-control" name="AccountSYSExpire" [(ngModel)]="accountSYS.Expire"
+                placeholder="" required>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+      <nb-card-footer>
+        <button type="button" class="btn btn-primary" (click)="onClose()">取消</button>
+        <button type="button" class="btn btn-primary" [disabled]="accountSYSForm.invalid" (click)="onSubmit()">创建</button>
+      </nb-card-footer>
+    </nb-card>
+  </div>
+
+</div>

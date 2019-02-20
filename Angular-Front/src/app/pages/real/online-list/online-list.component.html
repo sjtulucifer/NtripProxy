@@ -1,0 +1,47 @@
+<nb-card status="info">
+  <nb-card-header><span>查询时间：{{refreshTime| date:'yyyy-MM-dd HH:mm:ss'}},在线用户：[{{onlineSessionList.length}}],固定率：{{fixedRate}}</span></nb-card-header>
+  <nb-card-body>
+    <nb-tabset>
+      <nb-tab tabTitle="固定解({{fixedList.length}})">
+        <nb-card>
+          <nb-card-body>
+            <ng2-smart-table [settings]="settings" [source]="fixedList" (edit)="traceAccount($event)">
+            </ng2-smart-table>
+          </nb-card-body>
+        </nb-card>
+      </nb-tab>
+      <nb-tab tabTitle="浮点解({{floatList.length}})">
+        <nb-card>
+          <nb-card-body>
+            <ng2-smart-table [settings]="settings" [source]="floatList">
+            </ng2-smart-table>
+          </nb-card-body>
+        </nb-card>
+      </nb-tab>
+      <nb-tab tabTitle="差分解({{differenceList.length}})">
+        <nb-card>
+          <nb-card-body>
+            <ng2-smart-table [settings]="settings" [source]="differenceList">
+            </ng2-smart-table>
+          </nb-card-body>
+        </nb-card>
+      </nb-tab>
+      <nb-tab tabTitle="单点解({{singleList.length}})">
+        <nb-card>
+          <nb-card-body>
+            <ng2-smart-table [settings]="settings" [source]="singleList">
+            </ng2-smart-table>
+          </nb-card-body>
+        </nb-card>
+      </nb-tab>
+      <nb-tab tabTitle="其他解({{otherList.length}})">
+        <nb-card>
+          <nb-card-body>
+            <ng2-smart-table [settings]="settings" [source]="otherList">
+            </ng2-smart-table>
+          </nb-card-body>
+        </nb-card>
+      </nb-tab>
+    </nb-tabset>
+  </nb-card-body>
+</nb-card>

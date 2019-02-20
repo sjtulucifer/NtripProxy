@@ -1,0 +1,9 @@
+<nb-card accent="info">
+  <nb-card-header>
+    用户列表
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="userList" (create)="createUser()" (edit)="editUser($event)" (delete)="deleteUser($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

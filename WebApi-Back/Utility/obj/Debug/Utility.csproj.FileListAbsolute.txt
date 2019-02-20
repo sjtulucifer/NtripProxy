@@ -1,0 +1,10 @@
+C:\Dev\WebApi-Back\Utility\bin\Debug\NLog.config
+C:\Dev\WebApi-Back\Utility\bin\Debug\NtripProxy.Utility.dll
+C:\Dev\WebApi-Back\Utility\bin\Debug\NtripProxy.Utility.pdb
+C:\Dev\WebApi-Back\Utility\bin\Debug\NLog.dll
+C:\Dev\WebApi-Back\Utility\bin\Debug\NLog.xml
+C:\Dev\WebApi-Back\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
+C:\Dev\WebApi-Back\Utility\obj\Debug\Utility.csproj.CopyComplete
+C:\Dev\WebApi-Back\Utility\obj\Debug\NtripProxy.Utility.dll
+C:\Dev\WebApi-Back\Utility\obj\Debug\NtripProxy.Utility.pdb
+C:\Dev\WebApi-Back\Utility\obj\Debug\Utility.csprojAssemblyReference.cache

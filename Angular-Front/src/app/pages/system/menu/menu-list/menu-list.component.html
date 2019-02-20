@@ -1,0 +1,10 @@
+<nb-card accent="info">
+    <nb-card-header>
+      菜单列表
+    </nb-card-header>
+    <nb-card-body>
+      <ng2-smart-table [settings]="settings" [source]="menuList" (createConfirm)="addMenu($event)" (editConfirm)="editMenu($event)"
+        (deleteConfirm)="deleteMenu($event)">
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>

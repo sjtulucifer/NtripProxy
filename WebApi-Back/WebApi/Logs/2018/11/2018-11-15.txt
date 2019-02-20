@@ -1,0 +1,6 @@
+2018-11-15 16:11:58.3835 | 调用接口api/GGAHistory/GetOnlineNewestGGAByAccount异常，异常信息为：索引超出范围。必须为非负值并小于集合大小。
+参数名: index 
+2018-11-15 16:12:03.3039 | 调用接口api/GGAHistory/GetOnlineNewestGGAByAccount异常，异常信息为：索引超出范围。必须为非负值并小于集合大小。
+参数名: index 
+2018-11-15 16:12:08.3029 | 调用接口api/GGAHistory/GetOnlineNewestGGAByAccount异常，异常信息为：索引超出范围。必须为非负值并小于集合大小。
+参数名: index 

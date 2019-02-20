@@ -1,0 +1,14 @@
+2018-10-09 10:17:29.2439 | 调用接口api/Account/AddAccount异常，异常信息为：未将对象引用设置到对象的实例。 
+2018-10-09 10:18:28.8254 | 调用接口api/Account/AddAccount异常，异常信息为：未将对象引用设置到对象的实例。 
+2018-10-09 10:18:29.8374 | 调用接口api/Account/AddAccount异常，异常信息为：未将对象引用设置到对象的实例。 
+2018-10-09 10:18:30.1850 | 调用接口api/Account/AddAccount异常，异常信息为：未将对象引用设置到对象的实例。 
+2018-10-09 10:40:52.1507 | 调用接口api/Account/AddAccount异常，异常信息为：未将对象引用设置到对象的实例。 
+2018-10-09 10:41:09.5968 | 调用接口api/Account/AddAccount异常，异常信息为：未将对象引用设置到对象的实例。 
+2018-10-09 10:42:59.9821 | 调用接口api/Account/AddAccount异常，异常信息为：未将对象引用设置到对象的实例。 
+2018-10-09 14:35:21.6487 | 调用接口api/User/Login异常，异常信息为：未将对象引用设置到对象的实例。 
+2018-10-09 14:35:52.0892 | 调用接口api/User/Login异常，异常信息为：未将对象引用设置到对象的实例。 
+2018-10-09 14:36:47.1548 | 调用接口api/User/Login异常，异常信息为：未将对象引用设置到对象的实例。 
+2018-10-09 15:12:10.1940 | 调用接口api/User/Login异常，异常信息为：类型“COMPANY”的属性“COMPNAY1”不是导航属性。Reference 和 Collection 方法只能用于导航属性。请使用 Property 或 ComplexProperty 方法。 
+2018-10-09 15:13:25.5300 | 调用接口api/User/Login异常，异常信息为：类型“COMPANY”的属性“COMPNAY1”不是导航属性。Reference 和 Collection 方法只能用于导航属性。请使用 Property 或 ComplexProperty 方法。 
+2018-10-09 15:21:47.1678 | 调用接口api/User/Login异常，异常信息为：类型“COMPANY”的属性“COMPNAY1”不是基元或复杂属性。Property 方法只能用于基元或复杂属性。请使用 Reference 或 Collection 方法。 
+2018-10-09 15:24:01.4636 | 调用接口api/User/Login异常，异常信息为：类型“COMPANY”的属性“COMPNAY1”不是导航属性。Reference 和 Collection 方法只能用于导航属性。请使用 Property 或 ComplexProperty 方法。 

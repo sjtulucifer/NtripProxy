@@ -1,0 +1,72 @@
+<nb-card status="info">
+  <nb-card-header>
+    {{accountSYS.Name}}
+  </nb-card-header>
+  <nb-card-body>
+    <form novalidate #accountSYSForm="ngForm">
+      <div class="form-group row">
+        <label for="AccountSYSName" class="col-sm-3 col-form-label">系统账户名</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" name="AccountSYSName" [(ngModel)]="accountSYS.Name" #AccountSYSName="ngModel"
+            required>
+          <div *ngIf="AccountSYSName.errors">
+            <p *ngIf="AccountSYSName.errors?.required && AccountSYSName.touched">系统账户名必须填写</p>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="AccountSYSPassword" class="col-sm-3 col-form-label">账户密码</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" name="AccountSYSPassword" [(ngModel)]="accountSYS.Password"
+            #AccountSYSPassword="ngModel" required>
+          <div *ngIf="AccountSYSPassword.errors">
+            <p *ngIf="AccountSYSPassword.errors?.required && AccountSYSPassword.touched">账户密码必须填写</p>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="AccountSYSRegister" class="col-sm-3 col-form-label">注册日期</label>
+        <div class="col-sm-9">
+          <input type="date" class="form-control" name="AccountSYSRegister" [ngModel]="accountSYS.Register | date: 'yyyy-MM-dd'"
+            (ngModelChange)="registerChange($event)" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="AccountSYSExpire" class="col-sm-3 col-form-label">过期日期</label>
+        <div class="col-sm-9">
+          <input type="date" class="form-control" name="AccountSYSExpire" [ngModel]="accountSYS.Expire | date: 'yyyy-MM-dd'"
+            (ngModelChange)="expireChange($event)" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="AccountIsLocked" class="col-sm-3 col-form-label">是否锁定</label>
+        <div class="col-sm-9">
+          <input type="checkbox" class="form-control" name="AccountSYSIsLocked" [(ngModel)]="accountSYS.IsLocked">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="AccountIsOnline" class="col-sm-3 col-form-label">是否在线</label>
+        <div class="col-sm-9 input-group input-group-fill-only">
+          <input type="checkbox" class="form-control" name="AccountSYSIsOnline" [(ngModel)]="accountSYS.IsOnline"
+            disabled>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="AccountSYSLastLogin" class="col-sm-3 col-form-label">上次登录时间</label>
+        <div class="col-sm-9 input-group input-group-fill-only">
+          <input type="text" class="form-control" name="AccountSYSLastLogin" [ngModel]="accountSYS.LastLogin | date: 'yyyy-MM-dd HH:mm:ss'"
+            disabled>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="AccountSYSAge" class="col-sm-3 col-form-label">登录次数</label>
+        <div class="col-sm-9 input-group input-group-fill-only">
+          <input type="text" class="form-control" name="AccountSYSAge" [(ngModel)]="accountSYS.Age" disabled>
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button type="button" class="btn btn-primary" [disabled]="accountSYSForm.invalid" (click)="save()">保存</button>
+  </nb-card-footer>
+</nb-card>

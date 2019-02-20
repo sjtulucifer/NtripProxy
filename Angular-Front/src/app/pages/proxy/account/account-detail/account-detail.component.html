@@ -1,0 +1,162 @@
+<nb-card status="info">
+  <nb-card-header>{{account.Name}}</nb-card-header>
+  <nb-card-body>
+    <nb-tabset>
+      <nb-tab tabTitle="基础信息">
+        <nb-card>
+          <nb-card-body>
+            <form novalidate #accountForm="ngForm">
+              <div class="form-group row">
+                <label for="AccountSYSName" class="col-sm-3 col-form-label">账户名</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" placeholder="输入账户名" name="AccountName" [(ngModel)]="account.Name"
+                    #AccountName="ngModel" required>
+                  <div *ngIf="AccountName.errors?.required && AccountName.touched" class="error">
+                    账户名必须填写
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="AccountPassword" class="col-sm-3 col-form-label">账户密码</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" placeholder="输入账户密码" name="AccountPassword" [(ngModel)]="account.Password"
+                    #AccountPassword="ngModel" required>
+                  <div *ngIf="AccountPassword.errors?.required && AccountPassword.touched" class="error">
+                    账户密码必须填写
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="AccountRegister" class="col-sm-3 col-form-label">注册日期</label>
+                <div class="col-sm-9">
+                  <input type="date" class="form-control" name="AccountRegister" [ngModel]="account.Register | date: 'yyyy-MM-dd'"
+                    (ngModelChange)="registerChange($event)" placeholder="" required>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="AccountExpire" class="col-sm-3 col-form-label">过期日期</label>
+                <div class="col-sm-9">
+                  <input type="date" class="form-control" name="AccountExpire" [ngModel]="account.Expire | date: 'yyyy-MM-dd'"
+                    (ngModelChange)="expireChange($event)" placeholder="" required>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="AccountIsLocked" class="col-sm-3 col-form-label">是否锁定</label>
+                <div class="col-sm-9">
+                  <input type="checkbox" class="form-control" name="AccountIsLocked" [(ngModel)]="account.IsLocked">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="AccountIsOnline" class="col-sm-3 col-form-label">是否在线</label>
+                <div class="col-sm-9 input-group input-group-fill-only">
+                  <input type="checkbox" class="form-control" name="AccountIsOnline" [(ngModel)]="account.IsOnline"
+                    disabled>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="AccountLastLogin" class="col-sm-3 col-form-label">上次登录时间</label>
+                <div class="col-sm-9 input-group input-group-fill-only">
+                  <input type="text" class="form-control" name="AccountLastLogin" [(ngModel)]="account.LastLogin"
+                    #AccountLastLogin="ngModel" disabled="disabled">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="AccountPasswordOvertime" class="col-sm-3 col-form-label">密码输错时间</label>
+                <div class="col-sm-9 input-group input-group-fill-only">
+                  <input type="text" class="form-control" name="AccountPasswordOvertime" [(ngModel)]="account.PasswordOvertime"
+                    disabled>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="AccountPasswordOvercount" class="col-sm-3 col-form-label">密码输错次数</label>
+                <div class="col-sm-9 input-group input-group-fill-only">
+                  <input type="text" class="form-control" name="AccountPasswordOvercount" [(ngModel)]="account.PasswordOvercount"
+                    disabled>
+                </div>
+              </div>
+            </form>
+          </nb-card-body>
+          <nb-card-footer>
+            <button type="button" class="btn btn-primary" [disabled]="accountForm.invalid" (click)="saveAccount()">保存</button>
+          </nb-card-footer>
+        </nb-card>
+      </nb-tab>
+      <nb-tab tabTitle="公司信息">
+        <nb-card>
+          <nb-card-body>
+            <div *ngIf="!accountCompany">
+              <select class="form-control" [ngModel]="" name="accountCompany" (ngModelChange)="accountCompanyChange($event)">
+                <option *ngFor="let company of companies" [value]="company.ID">{{company.Name}}</option>
+              </select>
+            </div>
+            <div *ngIf="accountCompany">
+              <div class="form-group row">
+                <div class="col-sm-12">
+                  <select class="form-control" [ngModel]="accountCompany.ID" name="accountCompany" (ngModelChange)="accountCompanyChange($event)">
+                    <option *ngFor="let company of companies" [value]="company.ID">{{company.Name}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <span class="input-group-addon success">公司名</span>
+                    <input type="text" class="form-control" [ngModel]="accountCompany.Name" placeholder="" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <span class="input-group-addon success">公司法人</span>
+                    <input type="text" class="form-control" [ngModel]="accountCompany.Corporation" placeholder="" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <span class="input-group-addon success">公司资质</span>
+                    <input type="text" class="form-control" [ngModel]="accountCompany.Qualification" placeholder="" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <span class="input-group-addon success">资质号</span>
+                    <input type="text" class="form-control" [ngModel]="accountCompany.QNo" placeholder="" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <span class="input-group-addon success">公司行业</span>
+                    <input type="text" class="form-control" [ngModel]="accountCompany.Field" placeholder="" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <span class="input-group-addon success">联系人</span>
+                    <input type="text" class="form-control" [ngModel]="accountCompany.Contract" placeholder="" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <span class="input-group-addon success">联系电话</span>
+                    <input type="text" class="form-control" [ngModel]="accountCompany.Phone" placeholder="" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <span class="input-group-addon success">联系地址</span>
+                    <input type="text" class="form-control" [ngModel]="accountCompany.Address" placeholder="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nb-card-body>
+        </nb-card>
+      </nb-tab>
+    </nb-tabset>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,19 @@
+2018-11-19 13:59:56.1537 | 调用接口api/User/UpdateUser异常，异常信息为：对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。 
+2018-11-19 14:00:55.9139 | 调用接口api/User/UpdateUser异常，异常信息为：对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。 
+2018-11-19 14:03:53.2959 | 调用接口api/User/UpdateUser异常，异常信息为：对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。 
+2018-11-19 14:04:34.4081 | 调用接口api/User/UpdateUser异常，异常信息为：对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。 
+2018-11-19 14:07:24.1648 | 调用接口api/User/UpdateUser异常，异常信息为：对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。 
+2018-11-19 14:08:24.9235 | 调用接口api/User/UpdateUser异常，异常信息为：对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。 
+2018-11-19 14:09:11.3904 | 调用接口api/User/UpdateUser异常，异常信息为：对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。 
+2018-11-19 14:10:24.0481 | 调用接口api/User/UpdateUser异常，异常信息为：对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。 
+2018-11-19 14:14:45.1829 | 调用接口api/User/UpdateUser异常，异常信息为：对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。 
+2018-11-19 14:24:57.8162 | 调用接口api/User/UpdateUser异常，异常信息为：对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。 
+2018-11-19 14:27:29.9455 | 调用接口api/User/UpdateUser异常，异常信息为：对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。 
+2018-11-19 14:48:04.0187 | 调用接口api/User/UpdateUserCompany异常，异常信息为：对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。 
+2018-11-19 16:04:22.9585 | 调用接口api/Menu/UpdateMenu异常，异常信息为：存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。有关了解和处理乐观并发异常的信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=472540。 
+2018-11-19 16:04:24.7962 | 调用接口api/Menu/UpdateMenu异常，异常信息为：存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。有关了解和处理乐观并发异常的信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=472540。 
+2018-11-19 16:04:28.6743 | 调用接口api/Menu/UpdateMenu异常，异常信息为：存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。有关了解和处理乐观并发异常的信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=472540。 
+2018-11-19 16:07:01.7218 | 调用接口api/Menu/UpdateMenu异常，异常信息为：存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。有关了解和处理乐观并发异常的信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=472540。 
+2018-11-19 16:14:10.5267 | 调用接口api/Menu/UpdateMenu异常，异常信息为：存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。有关了解和处理乐观并发异常的信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=472540。 
+2018-11-19 16:14:23.8354 | 调用接口api/Menu/UpdateMenu异常，异常信息为：存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。有关了解和处理乐观并发异常的信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=472540。 
+2018-11-19 16:16:57.9757 | 调用接口api/Menu/UpdateMenu异常，异常信息为：存储区更新、插入或删除语句影响到了意外的行数(0)。实体在加载后可能被修改或删除。有关了解和处理乐观并发异常的信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=472540。 

@@ -1,0 +1,12 @@
+C:\Dev\WebApi-Back\DAL\bin\Release\NtripProxy.DAL.dll.config
+C:\Dev\WebApi-Back\DAL\bin\Release\NtripProxy.DAL.dll
+C:\Dev\WebApi-Back\DAL\bin\Release\NtripProxy.DAL.pdb
+C:\Dev\WebApi-Back\DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Dev\WebApi-Back\DAL\bin\Release\EntityFramework.dll
+C:\Dev\WebApi-Back\DAL\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Dev\WebApi-Back\DAL\bin\Release\zh-Hans\EntityFramework.resources.dll
+C:\Dev\WebApi-Back\DAL\obj\Release\DAL.csprojAssemblyReference.cache
+C:\Dev\WebApi-Back\DAL\obj\Release\DAL.csproj.CoreCompileInputs.cache
+C:\Dev\WebApi-Back\DAL\obj\Release\DAL.csproj.CopyComplete
+C:\Dev\WebApi-Back\DAL\obj\Release\NtripProxy.DAL.dll
+C:\Dev\WebApi-Back\DAL\obj\Release\NtripProxy.DAL.pdb

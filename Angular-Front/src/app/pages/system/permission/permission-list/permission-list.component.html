@@ -1,0 +1,11 @@
+<nb-card accent="info">
+    <nb-card-header>
+      权限列表
+    </nb-card-header>
+    <nb-card-body>
+      <ng2-smart-table [settings]="settings" [source]="permissionList" (createConfirm)="addPermission($event)" (editConfirm)="editPermission($event)"
+        (deleteConfirm)="deletePermission($event)">
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>
+  

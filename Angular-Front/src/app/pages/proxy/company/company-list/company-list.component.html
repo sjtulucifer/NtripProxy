@@ -1,0 +1,10 @@
+<nb-card accent="info">
+  <nb-card-header>
+    公司列表
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="companyList" (create)="createCompany()" (edit)="editCompany($event)"
+      (delete)="deleteCompany($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

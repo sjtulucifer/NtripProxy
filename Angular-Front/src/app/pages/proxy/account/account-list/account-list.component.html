@@ -1,0 +1,10 @@
+<nb-card accent="info">
+  <nb-card-header>
+    账号列表
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="accountList" (create)="createAccount()" (edit)="editAccount($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>
+

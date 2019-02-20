@@ -1,0 +1,9 @@
+<nb-card status="info">
+    <nb-card-header>
+        {{role.Name}}权限
+    </nb-card-header>
+    <nb-card-body>
+        <ng2-smart-table [settings]="settings" [source]="source" (create)="updatePermissions()" (delete)="deletePermission($event)">
+        </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>

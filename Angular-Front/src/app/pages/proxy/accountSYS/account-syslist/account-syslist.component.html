@@ -1,0 +1,9 @@
+<nb-card accent="info">
+  <nb-card-header>
+    系统账号列表
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="accountSYSList" (create)="createAccountSYS()" (edit)="editAccountSYS($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>
