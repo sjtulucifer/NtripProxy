@@ -101,9 +101,57 @@ namespace NtripProxy.WebApi.Controllers
         }
 
         /// <summary>
-        /// 获取系统账号数量
+        /// 获取即将到期系统账号实体基础信息
         /// </summary>
-        /// <returns>系统账号数量</returns>
+        /// <returns>即将到期系统账号实体基础信息</returns>
+        [HttpGet]
+        [Route("GetExpiringAccountSYSs")]
+        public IHttpActionResult GetExpiringAccountSYSs()
+        {
+            ResultEntity result = new ResultEntity();
+            List<AccountSYSEntity> accounts = new List<AccountSYSEntity>();
+            try
+            {
+                accounts = dal.FindAllAccountSYSExpiring().ToList<ACCOUNTSYS>().ConvertAll<AccountSYSEntity>(a => a.ToAccountSYSEntity());
+            }
+            catch (Exception e)
+            {
+                result.Message = e.Message;
+                NtripProxyLogger.LogExceptionIntoFile("调用接口api/AccountSYS/GetExpiringAccountSYSs异常，异常信息为：" + e.Message);
+            }
+            result.IsSuccess = result.Message == null;
+            result.Data = accounts;
+            return Json<ResultEntity>(result);
+        }
+
+        /// <summary>
+        /// 获取过期系统账号实体基础信息
+        /// </summary>
+        /// <returns>过期系统账号实体基础信息</returns>
+        [HttpGet]
+        [Route("GetExpiredAccountSYSs")]
+        public IHttpActionResult GetExpiredAccountSYSs()
+        {
+            ResultEntity result = new ResultEntity();
+            List<AccountSYSEntity> accounts = new List<AccountSYSEntity>();
+            try
+            {
+                accounts = dal.FindAllAccountSYSExpired().ToList<ACCOUNTSYS>().ConvertAll<AccountSYSEntity>(a => a.ToAccountSYSEntity());
+            }
+            catch (Exception e)
+            {
+                result.Message = e.Message;
+                NtripProxyLogger.LogExceptionIntoFile("调用接口api/AccountSYS/GetExpiredAccountSYSs异常，异常信息为：" + e.Message);
+            }
+            result.IsSuccess = result.Message == null;
+            result.Data = accounts;
+            return Json<ResultEntity>(result);
+        }
+
+        /// <summary>
+        /// 获取系统账号总数量
+        /// </summary>
+        /// <returns>系统账号总数量</returns>
         [HttpGet]
         [Route("GetAllAccountSYSCount")]
         public IHttpActionResult GetAccountSYSCount()
@@ -118,6 +166,78 @@ namespace NtripProxy.WebApi.Controllers
             {
                 result.Message = e.Message;
                 NtripProxyLogger.LogExceptionIntoFile("调用接口api/AccountSYS/GetAccountSYSCount异常，异常信息为：" + e.Message);
+            }
+            result.IsSuccess = result.Message == null;
+            result.Data = count;
+            return Json<ResultEntity>(result);
+        }
+
+        /// <summary>
+        /// 获取系统账号即将过期数量
+        /// </summary>
+        /// <returns>系统账号即将过期数量</returns>
+        [HttpGet]
+        [Route("GetAllAccountSYSExpiringCount")]
+        public IHttpActionResult GetAllAccountSYSExpiringCount()
+        {
+            ResultEntity result = new ResultEntity();
+            int count = 0;
+            try
+            {
+                count = dal.FindAllAccountSYSExpiring().Count;
+            }
+            catch (Exception e)
+            {
+                result.Message = e.Message;
+                NtripProxyLogger.LogExceptionIntoFile("调用接口api/AccountSYS/GetAllAccountSYSExpiringCount异常，异常信息为：" + e.Message);
+            }
+            result.IsSuccess = result.Message == null;
+            result.Data = count;
+            return Json<ResultEntity>(result);
+        }
+
+        /// <summary>
+        /// 获取系统账号过期数量
+        /// </summary>
+        /// <returns>系统账号过期数量</returns>
+        [HttpGet]
+        [Route("GetAllAccountSYSExpiredCount")]
+        public IHttpActionResult GetAllAccountSYSExpiredCount()
+        {
+            ResultEntity result = new ResultEntity();
+            int count = 0;
+            try
+            {
+                count = dal.FindAllAccountSYSExpired().Count;
+            }
+            catch (Exception e)
+            {
+                result.Message = e.Message;
+                NtripProxyLogger.LogExceptionIntoFile("调用接口api/AccountSYS/GetAllAccountSYSExpiredCount异常，异常信息为：" + e.Message);
+            }
+            result.IsSuccess = result.Message == null;
+            result.Data = count;
+            return Json<ResultEntity>(result);
+        }
+
+        /// <summary>
+        /// 获取系统账号锁定数量
+        /// </summary>
+        /// <returns>系统账号锁定数量</returns>
+        [HttpGet]
+        [Route("GetAllAccountSYSLockedCount")]
+        public IHttpActionResult GetAccountSYSLockedCount()
+        {
+            ResultEntity result = new ResultEntity();
+            int count = 0;
+            try
+            {
+                count = dal.FindAllAccountSYSLocked().Count;
+            }
+            catch (Exception e)
+            {
+                result.Message = e.Message;
+                NtripProxyLogger.LogExceptionIntoFile("调用接口api/AccountSYS/GetAccountSYSLockedCount异常，异常信息为：" + e.Message);
             }
             result.IsSuccess = result.Message == null;
             result.Data = count;
@@ -142,6 +262,32 @@ namespace NtripProxy.WebApi.Controllers
             {
                 result.Message = e.Message;
                 NtripProxyLogger.LogExceptionIntoFile("调用接口api/AccountSYS/GetAccountSYSOnlineCount异常，异常信息为：" + e.Message);
+            }
+            result.IsSuccess = result.Message == null;
+            result.Data = count;
+            return Json<ResultEntity>(result);
+        }
+
+        
+
+        /// <summary>
+        /// 获取系统账号过期数量
+        /// </summary>
+        /// <returns>系统账号过期数量</returns>
+        [HttpGet]
+        [Route("GetAllAccountSYSEffectiveCount")]
+        public IHttpActionResult GetAllAccountSYSEffectiveCount()
+        {
+            ResultEntity result = new ResultEntity();
+            int count = 0;
+            try
+            {
+                count = dal.FindAllAccountSYSEffective().Count;
+            }
+            catch (Exception e)
+            {
+                result.Message = e.Message;
+                NtripProxyLogger.LogExceptionIntoFile("调用接口api/AccountSYS/GetAllAccountSYSEffectiveCount异常，异常信息为：" + e.Message);
             }
             result.IsSuccess = result.Message == null;
             result.Data = count;

@@ -35,6 +35,10 @@ export class AccountService {
     return this.http.get(this.baseUrl + 'GetAccountsOnline');
   }
 
+  getAccountByCompanyID(id: string): Observable<any> {
+    return this.http.get(this.baseUrl + 'GetAccountByCompanyID/' + id);
+  }
+
   getAccountByID(id: string): Observable<any> {
     return this.http.get(this.baseUrl + 'GetAccountByID/' + id);
   }

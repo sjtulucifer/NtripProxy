@@ -68,7 +68,7 @@ import { MenuComponent } from './menu/menu.component';
     UpdatePermissionViewComponent,
     PermissionSelectComponent,
     UpdateMenuViewComponent,
-    MenuSelectComponent,
+    MenuSelectComponent
   ]
 })
 export class SystemModule { }

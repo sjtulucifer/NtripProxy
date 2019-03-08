@@ -182,5 +182,30 @@ namespace NtripProxy.WebApi.Controllers
             result.Data = accountEntity;
             return Json<ResultEntity>(result);
         }
+
+        /// <summary>
+        /// 通过公司ID查找公司所有账号信息
+        /// </summary>
+        /// <param name="id">公司ID号</param>
+        /// <returns>找到的账号实体</returns>
+        [HttpGet]
+        [Route("GetAccountByCompanyID/{id}")]
+        public IHttpActionResult GetAccountByCompanyID(string id)
+        {
+            ResultEntity result = new ResultEntity();
+            List<AccountEntity> accounts = new List<AccountEntity>();
+            try
+            {
+                accounts = dal.FindAccountByCompanyID(new Guid(id)).ToList<ACCOUNT>().ConvertAll<AccountEntity>(a => a.ToAccountEntity());
+            }
+            catch (Exception e)
+            {
+                result.Message = e.Message;
+                NtripProxyLogger.LogExceptionIntoFile("调用接口api/Account/GetAccountByCompanyID/{id}异常，异常信息为：" + e.Message);
+            }
+            result.IsSuccess = result.Message == null;
+            result.Data = accounts;
+            return Json<ResultEntity>(result);
+        }
     }
 }

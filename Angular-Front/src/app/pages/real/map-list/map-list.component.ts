@@ -43,9 +43,9 @@ export class MapListComponent implements OnInit, AfterViewInit, OnDestroy {
     //初始化高德地图
     this.map = new AMap.Map('container', {
       resizeEnable: true,
-      zoom: 9,
-      //海南为中心
-      center: [109.785258,19.205263]
+      zoom: 5,
+      //中国为中心
+      center: [109.246927,27.411798]
     });
     this.user = JSON.parse(sessionStorage.getItem('loginUser')) as User;
     this.getFreshData();

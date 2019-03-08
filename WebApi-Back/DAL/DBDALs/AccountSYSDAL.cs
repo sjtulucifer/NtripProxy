@@ -81,15 +81,74 @@ namespace NtripProxy.DAL.DBDALs
         }
 
         /// <summary>
+        /// 查找所有锁定系统账号基本信息
+        /// </summary>
+        /// <returns>所有锁定系统账号列表</returns>
+        public List<ACCOUNTSYS> FindAllAccountSYSLocked()
+        {
+            List<ACCOUNTSYS> result = new List<ACCOUNTSYS>();
+            using (var ctx = new NtripProxyDB())
+            {
+                result = ctx.ACCOUNTSYS.Where<ACCOUNTSYS>(a => a.isDelete == false && a.AccountSYS_IsLocked == true).ToList<ACCOUNTSYS>();
+            }
+            return result;
+        }
+
+        /// <summary>
         /// 查找所有在线系统账号基本信息
         /// </summary>
-        /// <returns>所有系统账号列表</returns>
+        /// <returns>所有在线系统账号列表</returns>
         public List<ACCOUNTSYS> FindAllAccountSYSOnline()
         {
             List<ACCOUNTSYS> result = new List<ACCOUNTSYS>();
             using (var ctx = new NtripProxyDB())
             {
                 result = ctx.ACCOUNTSYS.Where<ACCOUNTSYS>(a => a.isDelete == false && a.AccountSYS_IsOnline == true).ToList<ACCOUNTSYS>();
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 查找所有过期系统账号基本信息
+        /// </summary>
+        /// <returns>所有过期系统账号列表</returns>
+        public List<ACCOUNTSYS> FindAllAccountSYSExpired()
+        {
+            List<ACCOUNTSYS> result = new List<ACCOUNTSYS>();
+            using (var ctx = new NtripProxyDB())
+            {
+                result = ctx.ACCOUNTSYS.Where<ACCOUNTSYS>(a => a.isDelete == false && a.AccountSYS_Expire < DateTime.Now).ToList<ACCOUNTSYS>();
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 查找即将过期系统账号基本信息
+        /// </summary>
+        /// <returns>所有即将过期系统账号列表</returns>
+        public List<ACCOUNTSYS> FindAllAccountSYSExpiring()
+        {
+            List<ACCOUNTSYS> result = new List<ACCOUNTSYS>();
+            using (var ctx = new NtripProxyDB())
+            {
+                DateTime checkTime = DateTime.Now.AddMonths(1);
+                result = ctx.ACCOUNTSYS.Where<ACCOUNTSYS>(a => a.isDelete == false && a.AccountSYS_Expire < checkTime && a.AccountSYS_Expire > DateTime.Now).ToList<ACCOUNTSYS>();
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 查找所有有效系统账号基本信息
+        /// </summary>
+        /// <returns>所有有效系统账号列表</returns>
+        public List<ACCOUNTSYS> FindAllAccountSYSEffective()
+        {
+            List<ACCOUNTSYS> result = new List<ACCOUNTSYS>();
+            using (var ctx = new NtripProxyDB())
+            {
+                result = ctx.ACCOUNTSYS.Where<ACCOUNTSYS>(a => a.isDelete == false
+                                                          && a.AccountSYS_IsLocked == false 
+                                                          && a.AccountSYS_Expire > DateTime.Now).ToList<ACCOUNTSYS>();
             }
             return result;
         }

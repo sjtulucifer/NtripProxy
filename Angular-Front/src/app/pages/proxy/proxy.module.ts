@@ -6,7 +6,7 @@ import { ProxyComponent } from './proxy.component';
 import { AccountListComponent, DelayExprieViewComponent } from './account/account-list/account-list.component';
 import { AccountDetailComponent } from './account/account-detail/account-detail.component';
 import { AccountAddComponent } from './account/account-add/account-add.component';
-import { CompanyListComponent } from './company/company-list/company-list.component';
+import { CompanyListComponent, ShowCompanyAccountViewComponent } from './company/company-list/company-list.component';
 import { CompanyDetailComponent } from './company/company-detail/company-detail.component';
 import { AccountSYSListComponent, DelayExprieSYSViewComponent } from './accountSYS/account-syslist/account-syslist.component';
 import { NbCardModule, NbTabsetModule } from '@nebular/theme';
@@ -20,6 +20,8 @@ import { AccountSYSAddComponent } from './accountSYS/account-sysadd/account-sysa
 import { AccountComponent } from './account/account.component';
 import { AccountSYSComponent } from './accountSYS/accountsys.component';
 import { CompanyComponent } from './company/company.component';
+import { ThemeModule } from '../../@theme/theme.module';
+import { CompanyAccountComponent } from './company/company-account/company-account.component';
 
 @NgModule({
   imports: [
@@ -28,7 +30,8 @@ import { CompanyComponent } from './company/company.component';
     NbCardModule,
     Ng2SmartTableModule,
     FormsModule,
-    NbTabsetModule
+    NbTabsetModule,
+    ThemeModule
   ],
   declarations: [
     ProxyComponent, 
@@ -49,6 +52,8 @@ import { CompanyComponent } from './company/company.component';
     AccountSYSAddComponent,
     DelayExprieViewComponent,
     AccountAddComponent,
+    CompanyAccountComponent,
+    ShowCompanyAccountViewComponent
   ],
   entryComponents: [
     CompanyAddComponent,
@@ -58,6 +63,7 @@ import { CompanyComponent } from './company/company.component';
     AccountSYSAddComponent,
     DelayExprieViewComponent,
     AccountAddComponent,
+    ShowCompanyAccountViewComponent
   ]  
 })
 export class ProxyModule { }

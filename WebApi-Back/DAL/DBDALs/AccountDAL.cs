@@ -135,6 +135,21 @@ namespace NtripProxy.DAL.DBDALs
         }
 
         /// <summary>
+        /// 通过公司ID号查找公司账号信息
+        /// </summary>
+        /// <param name="id">公司ID号</param>
+        /// <returns>账号信息</returns>
+        public List<ACCOUNT> FindAccountByCompanyID(Guid id)
+        {
+            List<ACCOUNT> result = new List<ACCOUNT>();
+            using (var ctx = new NtripProxyDB())
+            {
+                result = ctx.ACCOUNTs.Include("COMPANY").Where<ACCOUNT>(a => a.isDelete == false && a.COMPANY.ID == id).ToList<ACCOUNT>();
+            }
+            return result;
+        }
+
+        /// <summary>
         /// 通过账户名查找账号全部信息
         /// </summary>
         /// <param name="name">账号名</param>

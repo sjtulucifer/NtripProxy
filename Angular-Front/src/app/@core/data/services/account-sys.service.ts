@@ -27,12 +27,38 @@ export class AccountSYSService {
     return this.http.get(this.baseUrl + 'GetAllAccountSYSs');
   }
 
+  getExpiringAccountSYSList(): Observable<any> {
+    return this.http.get(this.baseUrl + 'GetExpiringAccountSYSs');
+  }
+
+  getExpiredAccountSYSList(): Observable<any> {
+    return this.http.get(this.baseUrl + 'GetExpiredAccountSYSs');
+  }
+
   getAccountSYSCount(): Observable<any> {
     return this.http.get(this.baseUrl + 'GetAllAccountSYSCount');
   }
 
+  getAccountSYSExpiringCount(): Observable<any> {
+    return this.http.get(this.baseUrl + 'GetAllAccountSYSExpiringCount');
+  }
+
+  getAccountSYSExpiredCount(): Observable<any> {
+    return this.http.get(this.baseUrl + 'GetAllAccountSYSExpiredCount');
+  }
+
+  getAccountSYSLockedCount(): Observable<any> {
+    return this.http.get(this.baseUrl + 'GetAllAccountSYSLockedCount');
+  }
+
   getAccountSYSOnlineCount(): Observable<any> {
     return this.http.get(this.baseUrl + 'GetAllAccountSYSOnlineCount');
+  }
+
+
+
+  getAccountSYSEffectiveCount(): Observable<any> {
+    return this.http.get(this.baseUrl + 'GetAllAccountSYSEffectiveCount');
   }
 
   getAccountSYSByID(id: string): Observable<any> {

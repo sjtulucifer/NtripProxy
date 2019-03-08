@@ -8,6 +8,7 @@ import { AccountDetailComponent } from './account/account-detail/account-detail.
 import { AccountSYSListComponent } from './accountSYS/account-syslist/account-syslist.component';
 import { AccountSYSDetailComponent } from './accountSYS/account-sysdetail/account-sysdetail.component';
 import { AuthGuardDirective } from '../../auth/auth-guard.directive';
+import { CompanyAccountComponent } from './company/company-account/company-account.component';
 
 const routes: Routes = [{
   path: '',
@@ -23,6 +24,9 @@ const routes: Routes = [{
         path: 'companyDetail/:id',
         component: CompanyDetailComponent,
       }, {
+        path: 'companyAccount/:id',
+        component: CompanyAccountComponent,
+      },{
         path: '',
         redirectTo: 'companyList',
         pathMatch: 'full',

@@ -1,5 +1,3 @@
-C:\Dev\WebApi-Back\WebApi\obj\Debug\WebApi.csprojAssemblyReference.cache
-C:\Dev\WebApi-Back\WebApi\obj\Debug\WebApi.csproj.CoreCompileInputs.cache
 C:\Dev\WebApi-Back\WebApi\bin\ApplicationInsights.config
 C:\Dev\WebApi-Back\WebApi\bin\NLog.config
 C:\Dev\WebApi-Back\WebApi\bin\NtripProxy.WebApi.dll.config
@@ -118,6 +116,8 @@ C:\Dev\WebApi-Back\WebApi\bin\zh-Hans\System.Web.Razor.resources.dll
 C:\Dev\WebApi-Back\WebApi\bin\zh-Hans\System.Web.WebPages.resources.dll
 C:\Dev\WebApi-Back\WebApi\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 C:\Dev\WebApi-Back\WebApi\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+C:\Dev\WebApi-Back\WebApi\obj\Debug\WebApi.csprojAssemblyReference.cache
+C:\Dev\WebApi-Back\WebApi\obj\Debug\WebApi.csproj.CoreCompileInputs.cache
 C:\Dev\WebApi-Back\WebApi\obj\Debug\WebApi.csproj.CopyComplete
 C:\Dev\WebApi-Back\WebApi\obj\Debug\NtripProxy.WebApi.dll
 C:\Dev\WebApi-Back\WebApi\obj\Debug\NtripProxy.WebApi.pdb

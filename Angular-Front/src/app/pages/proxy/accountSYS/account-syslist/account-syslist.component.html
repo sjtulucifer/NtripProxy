@@ -1,9 +1,28 @@
 <nb-card accent="info">
   <nb-card-header>
-    系统账号列表
+    <nb-card>
+      <nb-card-header>账号总数：{{totalAccountSYSCount}} | 即将到期数：{{expiringAccountSYSCount}} | 过期数：{{expiredAccountSYSCount}}
+        | 在线数：{{onlineAccountSYSCount}} | 锁定数：{{lockedAccountSYSCount}} | 有效数:{{effectivAccountSYSCount}}
+      </nb-card-header>
+      <nb-card-body>
+        <div [(ngModel)]="radioModel" ngbRadioGroup
+          class="btn-group btn-group-toggle btn-outline-toggle-group btn-group-full-width btn-toggle-radio-group">
+          <label ngbButtonLabel class="btn btn-outline-primary">
+            <input ngbButton type="radio" value="left" (click)="this.getAccountSYSList()"> 账户总览
+          </label>
+          <label ngbButtonLabel class="btn btn-outline-primary">
+            <input ngbButton type="radio" value="middle" (click)="this.getExpiringAccountSYSList()"> 即将到期账户
+          </label>
+          <label ngbButtonLabel class="btn btn-outline-primary">
+            <input ngbButton type="radio" value="right" (click)="this.getExpiredAccountSYSList()"> 过期账户
+          </label>
+        </div>
+      </nb-card-body>
+    </nb-card>
   </nb-card-header>
   <nb-card-body>
-    <ng2-smart-table [settings]="settings" [source]="accountSYSList" (create)="createAccountSYS()" (edit)="editAccountSYS($event)">
+    <ng2-smart-table [settings]="settings" [source]="accountSYSList" (create)="createAccountSYS()"
+      (edit)="editAccountSYS($event)">
     </ng2-smart-table>
   </nb-card-body>
 </nb-card>

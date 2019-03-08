@@ -18,6 +18,8 @@ export class AccountTraceComponent implements OnInit, AfterViewInit, OnDestroy {
   private accountName: string;
   //gga信息
   public gga: GGAHistory = new GGAHistory();
+  //解状态显示信息
+  public statusDisplay: string = "";
   //session信息
   public session: SessionHistory = new SessionHistory();
   //GGA信息数据列表,只保存最近的20个GGA数据
@@ -109,10 +111,21 @@ export class AccountTraceComponent implements OnInit, AfterViewInit, OnDestroy {
         res => {
           if (res.IsSuccess) {
             this.gga = res.Data as GGAHistory;
-            if (this.gga.Session != null) {
-              this.session = this.gga.Session;
-              this.fixedRate = (this.session.FixedCount as number) / (this.session.GGACount as number);
+            if (this.gga.Status == "1") {
+              this.statusDisplay = "单点解";
+            } else if (this.gga.Status == "2") {
+              this.statusDisplay = "差分解";
+            } else if (this.gga.Status == "5") {
+              this.statusDisplay = "浮点解";
+            } else if (this.gga.Status == "4") {
+              this.statusDisplay = "固定解";
+            } else {
+              this.statusDisplay = "其他解";
             }
+            if (this.gga.Session != null) {
+                this.session = this.gga.Session;
+                this.fixedRate = (this.session.FixedCount as number) / (this.session.GGACount as number);
+              }
           }
         },
         error => {
@@ -140,6 +153,17 @@ export class AccountTraceComponent implements OnInit, AfterViewInit, OnDestroy {
           res => {
             if (res.IsSuccess) {
               this.gga = res.Data as GGAHistory;
+              if (this.gga.Status == "1") {
+                this.statusDisplay = "单点解";
+              } else if (this.gga.Status == "2") {
+                this.statusDisplay = "差分解";
+              } else if (this.gga.Status == "5") {
+                this.statusDisplay = "浮点解";
+              } else if (this.gga.Status == "4") {
+                this.statusDisplay = "固定解";
+              } else {
+                this.statusDisplay = "其他解";
+              }
               if (this.gga.Session != null) {
                 this.session = this.gga.Session;
                 this.fixedRate = (this.session.FixedCount as number) / (this.session.GGACount as number);

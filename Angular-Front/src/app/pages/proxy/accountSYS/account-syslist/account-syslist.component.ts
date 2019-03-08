@@ -82,8 +82,25 @@ export class DelayExprieSYSViewComponent implements ViewCell, OnInit {
   styleUrls: ['./account-syslist.component.scss']
 })
 export class AccountSYSListComponent implements OnInit {
-
+  
+  //列表中数据
   accountSYSList: AccountSYS[] = new Array<AccountSYS>();
+  //系统账号总数
+  totalAccountSYSCount: number = 0;
+  //到期系统账号数
+  expiredAccountSYSCount: number = 0;
+  //即将到期系统账号数
+  expiringAccountSYSCount: number = 0;
+  //锁定系统账号数
+  lockedAccountSYSCount: number = 0;
+  //在线系统账号数
+  onlineAccountSYSCount: number = 0;
+  
+  //有效系统账号数
+  effectivAccountSYSCount: number = 0;
+  //默认按钮显示位置
+  radioModel = 'left';
+
   settings = {
     mode: 'external',
     noDataMessage: '无数据',
@@ -194,11 +211,112 @@ export class AccountSYSListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.initPage();
+  }
+
+  initPage(): void {
+    //初始化相关数量
+    this.initCount();
+    //获取相关系统账号列表
     this.getAccountSYSList();
+  }
+
+  initCount(): void {
+    this.accountSYSService.getAccountSYSCount().subscribe(
+      res => {
+        if (res.IsSuccess) {
+          this.totalAccountSYSCount = res.Data as number;
+        }
+      },
+      error => {
+        console.error(error);
+      }
+    );
+
+    this.accountSYSService.getAccountSYSExpiringCount().subscribe(
+      res => {
+        if (res.IsSuccess) {
+          this.expiringAccountSYSCount = res.Data as number;
+        }
+      },
+      error => {
+        console.error(error);
+      }
+    );
+
+    this.accountSYSService.getAccountSYSExpiredCount().subscribe(
+      res => {
+        if (res.IsSuccess) {
+          this.expiredAccountSYSCount = res.Data as number;
+        }
+      },
+      error => {
+        console.error(error);
+      }
+    );
+
+    this.accountSYSService.getAccountSYSLockedCount().subscribe(
+      res => {
+        if (res.IsSuccess) {
+          this.lockedAccountSYSCount = res.Data as number;
+        }
+      },
+      error => {
+        console.error(error);
+      }
+    );
+
+    this.accountSYSService.getAccountSYSOnlineCount().subscribe(
+      res => {
+        if (res.IsSuccess) {
+          this.onlineAccountSYSCount = res.Data as number;
+        }
+      },
+      error => {
+        console.error(error);
+      }
+    );
+
+    this.accountSYSService.getAccountSYSEffectiveCount().subscribe(
+      res => {
+        if (res.IsSuccess) {
+          this.effectivAccountSYSCount = res.Data as number;
+        }
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
 
   getAccountSYSList(): void {
     this.accountSYSService.getAccountSYSList().subscribe(
+      res => {
+        if (res.IsSuccess) {
+          this.accountSYSList = res.Data as AccountSYS[];
+        }
+      },
+      error => {
+        console.error(error);
+      }
+    )
+  }
+
+  getExpiringAccountSYSList(): void {
+    this.accountSYSService.getExpiringAccountSYSList().subscribe(
+      res => {
+        if (res.IsSuccess) {
+          this.accountSYSList = res.Data as AccountSYS[];
+        }
+      },
+      error => {
+        console.error(error);
+      }
+    )
+  }
+
+  getExpiredAccountSYSList(): void {
+    this.accountSYSService.getExpiredAccountSYSList().subscribe(
       res => {
         if (res.IsSuccess) {
           this.accountSYSList = res.Data as AccountSYS[];

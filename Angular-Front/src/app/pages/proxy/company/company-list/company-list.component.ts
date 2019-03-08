@@ -6,6 +6,32 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CompanyAddComponent } from '../company-add/company-add.component';
 import { LogService } from '../../../../@core/data/services/log.service';
 import { Log } from '../../../../@core/data/entities/log';
+import { ViewCell } from 'ng2-smart-table';
+
+@Component({
+  selector: 'ntrip-show-company-account-view',
+  template: `
+    <button class="btn btn-primary" (click)="onClick()">账号信息</button>
+  `,
+})
+export class ShowCompanyAccountViewComponent implements ViewCell, OnInit {
+
+  @Input() value: string | number;
+  @Input() rowData: any;
+
+  @Output() save: EventEmitter<any> = new EventEmitter();
+
+  constructor(
+    private router: Router,
+  ) { }
+
+  ngOnInit() {
+  }
+
+  onClick() {
+    this.save.emit({ router: this.router, data: this.rowData });
+  }
+}
 
 
 @Component({
@@ -55,6 +81,17 @@ export class CompanyListComponent implements OnInit {
       Address: {
         title: '地址',
         type: 'string',
+      },
+      button: {
+        title: '',
+        type: 'custom',
+        filter: false,
+        renderComponent: ShowCompanyAccountViewComponent,
+        onComponentInitFunction(instance) {
+          instance.save.subscribe(row => {
+            row.router.navigate(['/pages/proxy/company/companyAccount', row.data.ID]);
+          });
+        }
       },
     },
   };
