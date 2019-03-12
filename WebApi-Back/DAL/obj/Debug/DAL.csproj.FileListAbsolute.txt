@@ -9,4 +9,3 @@ C:\Dev\WebApi-Back\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Dev\WebApi-Back\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Dev\WebApi-Back\DAL\obj\Debug\NtripProxy.DAL.dll
 C:\Dev\WebApi-Back\DAL\obj\Debug\NtripProxy.DAL.pdb
-C:\Dev\WebApi-Back\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
