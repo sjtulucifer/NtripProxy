@@ -184,6 +184,33 @@ namespace NtripProxy.WebApi.Controllers
         }
 
         /// <summary>
+        /// 通过账号名查找所有信息
+        /// </summary>
+        /// <param name="name">账号名</param>
+        /// <returns>找到的账号实体</returns>
+        [HttpGet]
+        [Route("GetAccountByName/{name}")]
+        public IHttpActionResult GetAccountByName(string name)
+        {
+            AccountEntity accountEntity = new AccountEntity();
+            ResultEntity result = new ResultEntity();
+            try
+            {
+                ACCOUNT temp = dal.FindAccountByName(name);
+                accountEntity = temp.ToAccountEntity();
+            }
+            catch (Exception e)
+            {
+                result.Message = e.Message;
+                NtripProxyLogger.LogExceptionIntoFile("调用接口api/Account/GetAccountByName/{name}异常，异常信息为：" + e.Message);
+            }
+
+            result.IsSuccess = result.Message == null;
+            result.Data = accountEntity;
+            return Json<ResultEntity>(result);
+        }
+
+        /// <summary>
         /// 通过公司ID查找公司所有账号信息
         /// </summary>
         /// <param name="id">公司ID号</param>

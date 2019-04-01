@@ -5,6 +5,6 @@
  */
 export const environment = {
   production: true,
-  webApiUrl: 'http://59.110.232.140:12345/api/',
+  webApiUrl: 'http://47.107.147.42:12345/api/',
   refreshRate: 5000,    //实时数据刷新频率，以毫秒为单位
 };
