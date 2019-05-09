@@ -2,11 +2,42 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
-    title: 'E-commerce',
-    icon: 'nb-e-commerce',
-    link: '/pages/dashboard',
+    title: '军信超维数据管理平台',
     home: true,
   },
+  {
+    title: '投影换带',
+    icon: 'nb-gear',
+    children: [
+      {
+        title: '高斯投影(正反算)',
+        link: '/pages/forms/inputs',
+      },
+      {
+        title: '自定义中央子午线',
+        link: '/pages/forms/layouts',
+      },
+      {
+        title: '坐标系转换(54、80、2000 标准3°带和6°带)',
+        link: '/pages/forms/buttons',
+      },
+    ],
+  },
+  {
+    title: '水准拟合计算(基于EGM08 1分模型)',
+    icon: 'nb-gear',
+    children: [
+      {
+        title: '转换水准高',
+        link: '/pages/level/ChangeHighLevel',
+      },
+      {
+        title: '根据已知点计算水准高',
+        link: '/pages/ui-features/icons',
+      },
+    ],
+  },
+  /*
   {
     title: 'IoT Dashboard',
     icon: 'nb-home',
@@ -255,4 +286,5 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+  */
 ];

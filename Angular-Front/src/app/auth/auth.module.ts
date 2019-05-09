@@ -13,6 +13,7 @@ import {
 } from '@nebular/theme';
 import { LoginComponent } from './login/login.component';
 import { AuthGuardDirective } from './auth-guard.directive';
+import { ThemeModule } from '../@theme/theme.module';
 
 @NgModule({
   imports: [
@@ -23,8 +24,8 @@ import { AuthGuardDirective } from './auth-guard.directive';
     NbInputModule,
     NbButtonModule,
     NbCheckboxModule,
+    ThemeModule,
     AuthRoutingModule,
-
     NbAuthModule,
   ],
   declarations: [

@@ -5,4 +5,5 @@
  */
 export const environment = {
   production: true,
+  webApiUrl: 'http://localhost:12345/api/'
 };

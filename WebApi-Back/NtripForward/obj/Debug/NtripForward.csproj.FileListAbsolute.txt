@@ -1,11 +1,11 @@
-C:\Dev\WebApi-Back\NtripForward\bin\Debug\NtripForward.exe
-C:\Dev\WebApi-Back\NtripForward\bin\Debug\NtripProxy.DAL.dll
 C:\Dev\WebApi-Back\NtripForward\bin\Debug\App.config
 C:\Dev\WebApi-Back\NtripForward\bin\Debug\NtripForward.exe.config
+C:\Dev\WebApi-Back\NtripForward\bin\Debug\NtripForward.exe
 C:\Dev\WebApi-Back\NtripForward\bin\Debug\NtripForward.pdb
 C:\Dev\WebApi-Back\NtripForward\bin\Debug\EntityFramework.dll
 C:\Dev\WebApi-Back\NtripForward\bin\Debug\EntityFramework.SqlServer.dll
 C:\Dev\WebApi-Back\NtripForward\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Dev\WebApi-Back\NtripForward\bin\Debug\NtripProxy.DAL.dll
 C:\Dev\WebApi-Back\NtripForward\bin\Debug\System.Data.SqlServerCe.dll
 C:\Dev\WebApi-Back\NtripForward\bin\Debug\NtripProxy.DAL.pdb
 C:\Dev\WebApi-Back\NtripForward\bin\Debug\NtripProxy.DAL.dll.config

@@ -1,0 +1,96 @@
+<nb-card>
+  <nb-card-body>
+    <nb-tabset>
+      <nb-tab tabTitle="单高程点水准拟合">
+        <div class="row">
+          <div class="col-md-6">
+            <nb-card status="danger">
+              <nb-card-header>待拟合高程点</nb-card-header>
+              <nb-card-body>
+                <form novalidate #beforeHighLevelForm="ngForm" (ngSubmit)="computeHighLevel()">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="纬度" name="Lat"
+                      [(ngModel)]="beforeHighLevel.Lat" #Lat="ngModel" required pattern="^(-?\d+)(\.\d+)?$">
+                  </div>
+                  <div *ngIf="Lat.invalid && (Lat.dirty || Lat.touched)" class="alert alert-danger">
+                    <div *ngIf="Lat.errors.required">
+                      纬度必须填写
+                    </div>
+                    <div *ngIf="Lat.errors.pattern">
+                      纬度必须为数字
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="经度" name="Lon"
+                      [(ngModel)]="beforeHighLevel.Lon" #Lon="ngModel" required pattern="^(-?\d+)(\.\d+)?$">
+                  </div>
+                  <div *ngIf="Lon.invalid && (Lon.dirty || Lon.touched)" class="alert alert-danger">
+                    <div *ngIf="Lon.errors.required">
+                      经度必须填写
+                    </div>
+                    <div *ngIf="Lon.errors.pattern">
+                      经度必须为数字
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="大地高(米)" name="HIGH"
+                      [(ngModel)]="beforeHighLevel.HIGH" #HIGH="ngModel" required pattern="^(-?\d+)(\.\d+)?$">
+                  </div>
+                  <div *ngIf="HIGH.invalid && (HIGH.dirty || HIGH.touched)" class="alert alert-danger">
+                    <div *ngIf="HIGH.errors.required">
+                      大地高必须填写
+                    </div>
+                    <div *ngIf="HIGH.errors.pattern">
+                      大地高必须为数字
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-success" [disabled]="beforeHighLevelForm.invalid">拟合</button>
+                </form>
+              </nb-card-body>
+            </nb-card>
+          </div>
+          <div class="col-md-6">
+            <nb-card status="info">
+              <nb-card-header>水准拟合结果</nb-card-header>
+              <nb-card-body>
+                <form novalidate #afterHighLevelForm="ngForm">
+                  <div class="form-group">
+                    <label for="Lat">纬度</label>
+                    <input type="text" class="form-control" placeholder="" name="Lat" [(ngModel)]="afterHighLevel.Lat"
+                      #Lat="ngModel" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="Lat">经度</label>
+                    <input type="text" class="form-control" placeholder="" name="Lon" [(ngModel)]="afterHighLevel.Lon"
+                      #Lon="ngModel" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="Lat">大地高(米)</label>
+                    <input type="text" class="form-control" placeholder="" name="HIGH"
+                      [(ngModel)]="afterHighLevel.HIGH" #HIGH="ngModel" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="Lat">水准高(米)</label>
+                    <input type="text" class="form-control" placeholder="" name="high"
+                      [(ngModel)]="afterHighLevel.high" #high="ngModel" disabled>
+                  </div>
+                </form>
+              </nb-card-body>
+            </nb-card>
+          </div>
+        </div>
+      </nb-tab>
+      <nb-tab tabTitle="多高程点水准拟合">
+        <div>
+          <a href="/assets/template/HighLevelTemplate.txt" download="高程点模板.txt">高程点模板</a>
+        </div>
+        <div>
+          <input type="file" (change)="uploadFile($event)" />
+        </div>
+        <div>
+          <input type="button" class="btn btn-success" value="拟合" (click)="computeUploadFile($event)" />
+        </div>
+      </nb-tab>
+    </nb-tabset>
+  </nb-card-body>
+</nb-card>
